@@ -3,23 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Style Links -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma@0.8.0/css/bulma.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Assets/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Change!! </title>
+    <title> Project #1 </title>
 </head>
 
-<body>
+<body
+    style="background-image: url(Images/bgcolor.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
     <div class="container">
         <section class="hero is-primary">
             <div class="hero-body">
                 <div class="container title is-4 level-right" id="weather">
                     <h3>City/Weather</h3>
                 </div>
+                <div class="logo">
+                    <img src="Images/task-manager-icon.png" id="logo">
+                </div>
                 <div class="container" id="hero">
-                    <h1 class="title is-1">
+                    <h1 class="title is-2">
                         Primary title
                     </h1>
                     <h2 class="subtitle" id="date">
@@ -28,29 +35,88 @@
                 </div>
             </div>
         </section>
-
+        <br>
         <!-- Main Section -->
         <div class="columns" style="height: 600px;">
-            <div class="column is-8" style="background-color: tomato;">
-                <!-- Task Blocks -->
-                
+            <div class="column">
+                <div class="column">
+                    <h1 style="font-weight: bolder; font-size: 25px; text-align: center; margin-top: -25px;">My Tasks
+                    </h1>
+                </div>
+                <!-- Numbered Tasks -->
+                <div id="tasks" class="columns">
+                    <div class="number1" style="font-weight: bolder;">1.</div>
+                    <input class="input" type="text" placeholder="Text input">
+                    <button class="button" id="saveBtn">Save</button>
+                    <button class="button" id="doneBtn" style="margin-right: 10px; ">Done</button>
+                </div>
+                <br>
+                <div id="tasks" class="columns">
+                    <div class="number2" style="font-weight: bolder;">2.</div>
+                    <input class="input" type="text" placeholder="Text input">
+                    <button class="button" id="saveBtn">Save</button>
+                    <button class="button" id="doneBtn" style="margin-right: 10px;">Done</button>
+                </div>
+                <br>
+                <div id="tasks" class="columns">
+                    <div class="number3" style="font-weight: bolder;">3.</div>
+                    <input class="input" type="text" placeholder="Text input">
+                    <button class="button" id="saveBtn">Save</button>
+                    <button class="button" id="doneBtn" style="margin-right: 10px;">Done</button>
+                </div>
+                <br>
+                <div id="tasks" class="columns">
+                    <div class="number4" style="font-weight: bolder;">4.</div>
+                    <input class="input" type="text" placeholder="Text input">
+                    <button class="button" id="saveBtn">Save</button>
+                    <button class="button" id="doneBtn" style="margin-right: 10px;">Done</button>
+                </div>
+                <br>
+                <div id="tasks" class="columns">
+                    <div class="number5" style="font-weight: bolder;">5.</div>
+                    <input class="input" type="text" placeholder="Text input">
+                    <button class="button" id="saveBtn">Save</button>
+                    <button class="button" id="doneBtn" style="margin-right: 10px;">Done</button>
+                </div>
+
+
 
 
             </div>
-            <div class="column is-4" style="background-color: teal;">
+            <div class="column is-2" id="settings" style="background-color: teal;">
                 <!-- Settings Sidebar -->
+                <div class="column">
+                    <h1 style="font-weight: bolder; font-size: 25px; text-align: center; margin-top: -25px;">Settings</h1>
+                </div>
 
-            </div>
+                <button class="button" id="addBtn" style="width:100%; text-align: center">Add New</button>
+                <br>
+                <br>
+                <button class="button is-danger is-outlined" id="deleteBtn" style="width:100%; text-align: center">
+                    <span>Delete All</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </button>
 
         </div>
 
-        <footer class="columns" style="height: 100px;">
-            <div class="column" style="background-color:blue;">
-                <!-- Jokes and/or Advice -->
+
+        <!-- Footer for Jokes and/or Advice -->
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    Rewarding Joke or Advice
+                </p>
 
             </div>
         </footer>
 
+        <section id="copyright">
+            <p>
+                &copy; 2020 JJ&C
+            </p>
+        </section>
 
 
 
