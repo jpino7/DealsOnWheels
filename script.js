@@ -9,7 +9,7 @@ $("#testbtn").on("click", function () {
 
     // var jokeNum = $.trim($("#jokenumber").val());
 
-    var queryUrl = "http://api.icndb.com/jokes/random/2";  //+ jokeNum
+    var queryUrl = "https://api.icndb.com/jokes/random/2";  //+ jokeNum
     $.ajax({
         url: queryUrl,
         method: "GET",
