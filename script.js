@@ -2,6 +2,13 @@ var save = document.querySelectorAll(".saveBtn");
 var done = document.querySelectorAll(".doneBtn");
 var taskNum = ["1", "2", "3", "4", "5"];
 
+// Variable to display current date
+var today = moment().format('dddd, MMMM Do YYYY, h:mm a');
+console.log(today);
+
+// Logs time to Hero area
+$("#date").text(today);
+
 
 
 
