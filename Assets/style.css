@@ -20,15 +20,22 @@ body {
     font-family: 'Lobster', cursive;
 }
 
-#saveBtn {
+.saveBtn {
     background-color: #21ABCD;
     border-radius: 15px 50px 30px;
     font-family: 'Lobster', cursive;
     color: white;
 }
 
-#doneBtn {
-    background-color: #21C8CD;
+.doneBtn {
+    background-color: #21ABCD;
+    border-radius: 15px 50px 30px;
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+
+.complete{
+    background-color: rgb(71, 248, 27);
     border-radius: 15px 50px 30px;
     font-family: 'Lobster', cursive;
     color: white;

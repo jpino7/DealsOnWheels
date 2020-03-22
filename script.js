@@ -1,6 +1,42 @@
+var save = document.querySelectorAll(".saveBtn");
+var done = document.querySelectorAll(".doneBtn");
+var taskNum = ["1", "2", "3", "4", "5"];
 
 
 
+
+//  code block to store data when pushing submit button
+$(save).on("click", function () {
+    var task = $(this).attr("data-task")
+    var inputBox = $("#" + task);
+    var details = inputBox.val();
+
+    localStorage.setItem(task, details);
+
+
+});
+
+// added class colors based on if statement 
+$(done).on("click", function () {
+
+    console.log(done)
+    $(this).addClass("complete");
+
+
+});
+
+// code block to get the stored data on page refresh
+function latestInfo() {
+    for (i = 0; i < taskNum.length; i++) {
+        console.log(localStorage.getItem(taskNum[i]))
+        $("#" + taskNum[i]).text(localStorage.getItem(taskNum[i]));
+
+        if(null){
+            $("#" + taskNum[i]).text("")
+        }
+    }
+};
+latestInfo();
 
 
 
