@@ -1,14 +1,16 @@
+// Button Variables
 var save = document.querySelectorAll(".saveBtn");
 var done = document.querySelectorAll(".doneBtn");
+// var delete = document.getElementById("#deleteBtn");
+
 var taskNum = ["1", "2", "3", "4", "5"];
+
 
 // Variable to display current date
 var today = moment().format('dddd, MMMM Do YYYY, h:mm a');
 console.log(today);
-
 // Logs time to Hero area
 $("#date").text(today);
-
 
 
 
@@ -38,14 +40,16 @@ function latestInfo() {
         console.log(localStorage.getItem(taskNum[i]))
         $("#" + taskNum[i]).text(localStorage.getItem(taskNum[i]));
 
-        if(null){
+        if (null) {
             $("#" + taskNum[i]).text("")
         }
     }
 };
 latestInfo();
 
-
+// Delete All Button callback
+// $(delete).on("click", function () {
+// });
 
 // joke generator function
 $("#testbtn").on("click", function () {
