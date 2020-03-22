@@ -1,6 +1,11 @@
 body {
     color: white;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.weatherwidget-io {
+    border-radius: 15px 50px 30px;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .hero {
@@ -17,27 +22,27 @@ body {
 
 .input {
     border-radius: 15px 50px 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .saveBtn {
     background-color: #21ABCD;
     border-radius: 15px 50px 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
     color: white;
 }
 
 .doneBtn {
     background-color: #21ABCD;
     border-radius: 15px 50px 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
     color: white;
 }
 
 .complete{
     background-color: rgb(71, 248, 27);
     border-radius: 15px 50px 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
     color: white;
 }
 
@@ -48,13 +53,13 @@ body {
 #addBtn {
     background-color:#60ADB6;
     border-radius: 15px 50px 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
     color: white;
 }
 
 #deleteBtn {
     border-radius: 15px 50px 30px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .footer {
