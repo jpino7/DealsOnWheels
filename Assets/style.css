@@ -1,0 +1,60 @@
+body {
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+
+.hero {
+    border-radius: 15px 50px 30px;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.input {
+    border-radius: 15px 50px 30px;
+    font-family: 'Lobster', cursive;
+}
+
+#saveBtn {
+    background-color: #21ABCD;
+    border-radius: 15px 50px 30px;
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+
+#doneBtn {
+    background-color: #21C8CD;
+    border-radius: 15px 50px 30px;
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+
+#settings {
+    border-radius: 15px 50px 30px;
+}
+
+#addBtn {
+    background-color:#60ADB6;
+    border-radius: 15px 50px 30px;
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+
+#deleteBtn {
+    border-radius: 15px 50px 30px;
+    font-family: 'Lobster', cursive;
+}
+
+.footer {
+    border-radius: 15px 50px 30px;
+    background-color: #00d1b2;
+}
+
+#copyright {
+    text-align: center;
+}
