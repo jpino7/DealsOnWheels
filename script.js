@@ -113,7 +113,7 @@ $("#testbtn2").on("click", function (event) {
     }).then(function (response) {
         var adviceText= JSON.parse(response);
        
-        $("#jokebox").text(JSON.stringify(adviceText.slip.advice));
+        $("#jokebox").text(adviceText.slip.advice);
         console.log(adviceText);
 
         
