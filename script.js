@@ -101,3 +101,23 @@ $("#testbtn").on("click", function () {
 
 })
 
+// Advice Slip click function
+
+$("#testbtn2").on("click", function (event) {
+    event.preventDefault();
+
+    $.ajax({
+        url: "https://api.adviceslip.com/advice",
+        method: "GET",
+
+    }).then(function (response) {
+        var adviceText= JSON.parse(response);
+       
+        $("#jokebox").text(JSON.stringify(adviceText.slip.advice));
+        console.log(adviceText);
+
+        
+
+
+    })
+})
