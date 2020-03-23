@@ -1,10 +1,10 @@
 // Button Variables
 var save = document.querySelectorAll(".saveBtn");
 var done = document.querySelectorAll(".doneBtn");
-// var delete = document.getElementById("#deleteBtn");
-
+var clear = document.getElementById("deleteBtn");
+var addNew = document.getElementById("addBtn")
 var taskNum = ["1", "2", "3", "4", "5"];
-
+var completeNum = ["done1", "done2", "done3", "done4", "done5"]
 
 // Variable to display current date
 var today = moment().format('dddd, MMMM Do YYYY, h:mm a');
@@ -22,17 +22,36 @@ $(save).on("click", function () {
 
     localStorage.setItem(task, details);
 
-
 });
 
-// added class colors based on if statement 
-$(done).on("click", function () {
-
-    console.log(done)
-    $(this).addClass("complete");
 
 
+// button to clear the local storage
+$(clear).on("click", function () {
+    localStorage.clear()
 });
+
+// button to mark if task is completed
+$(done).on("click", function (event) {
+    event.preventDefault();
+    var taskComplete = true;
+    console.log(taskComplete)
+
+    // changing the class color once clicked
+    if (taskComplete == true) {
+        $(this).addClass("complete");
+    };
+
+    // trying to set a function call when all bottons are true
+    for (i = 0; i < completeNum.length; i++) {
+        var finished = completeNum[i];
+        if ("#" + completeNum[i] == true) {
+            console.log("all finished");
+        }
+    }
+});
+
+
 
 // code block to get the stored data on page refresh
 function latestInfo() {
@@ -40,16 +59,21 @@ function latestInfo() {
         console.log(localStorage.getItem(taskNum[i]))
         $("#" + taskNum[i]).text(localStorage.getItem(taskNum[i]));
 
-        if (null) {
+        if (taskNum[i] == "") {
             $("#" + taskNum[i]).text("")
         }
     }
 };
 latestInfo();
 
-// Delete All Button callback
-// $(delete).on("click", function () {
+
+// attempt to make new task blocks on click
+// $(addNew),on("click",function(){
+
+//     $("#tasksection").append("");
+
 // });
+
 
 // joke generator function
 $("#testbtn").on("click", function () {
