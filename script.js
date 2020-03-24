@@ -116,12 +116,16 @@ $("#testbtn2").on("click", function (event) {
         const array = JSON.parse(response);
         console.log(array);
 
+        var randomQuote = Math.floor(Math.random() * (array.length - 1));
       
-            console.log(array[(Math.floor(Math.random() * (array.length - 1)))].text);
-            $("#jokebox").text(array[(Math.floor(Math.random() * (array.length - 1)))].text);
-        
-        
+            console.log(array[randomQuote].text);
+            $("#jokebox").text("\"" + array[randomQuote].text + "\"");
 
+            console.log(array[randomQuote].author);
+            $("#quoteAuthor").text("-" + array[randomQuote].author);
+        
+            
+           
     })
 
     
