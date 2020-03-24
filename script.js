@@ -116,11 +116,11 @@ $("#testbtn2").on("click", function (event) {
         const array = JSON.parse(response);
         console.log(array);
 
-        for (var i = 0; i < array.length; i++){
-            console.log(array[i].text)
-            $("#jokebox").text(array[i].text + array[i].author);
+      
+            console.log(array[(Math.floor(Math.random() * (array.length - 1)))].text);
+            $("#jokebox").text(array[(Math.floor(Math.random() * (array.length - 1)))].text);
         
-        }
+        
 
     })
 
