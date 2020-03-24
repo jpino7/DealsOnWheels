@@ -74,6 +74,15 @@ latestInfo();
 
 // });
 
+//another attempt to make new task block
+// $(addNew).on("click", function () {
+//     var taskBlock = $("<div>").addClass("columns")
+//     var text = $("<textarea>").addClass("input").attr("type", "text");
+//     var save = $("<button>").addClass("saveBtn button");
+//     var done = $("<button>").addClass("doneBtn button").attr("style", "margin-right: 10px; ");
+//     taskBlock.append(text, save, done);
+
+//     $("#taskSection").append(taskBlock);
 
 // joke generator function
 $("#testbtn").on("click", function () {
