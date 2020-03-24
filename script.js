@@ -101,23 +101,50 @@ $("#testbtn").on("click", function () {
 
 })
 
-// Advice Slip click function
+// Inspirational Quotes Api Click Function
 
 $("#testbtn2").on("click", function (event) {
     event.preventDefault();
 
     $.ajax({
-        url: "https://api.adviceslip.com/advice",
+        async: true,
+        crossDomain: true,
+        url: "https://type.fit/api/quotes",
         method: "GET",
 
     }).then(function (response) {
-        var adviceText= JSON.parse(response);
+        const array = JSON.parse(response);
+        console.log(array);
+
+        for (var i = 0; i < array.length; i++){
+            console.log(array[i].text)
+            $("#jokebox").text(array[i].text + array[i].author);
+        
+        }
+
+    })
+
+    
+})
+// Advice Slip click function
+
+// $("#testbtn2").on("click", function (event) {
+//     event.preventDefault();
+
+//     $.ajax({
+//         url: "https://api.adviceslip.com/advice",
+//         method: "GET",
+
+//     }).then(function (response) {
+//         var adviceText= JSON.parse(response);
        
-        $("#jokebox").text(adviceText.slip.advice);
-        console.log(adviceText);
+//         $("#jokebox").text(adviceText.slip.advice);
+//         console.log(adviceText);
 
         
 
 
-    })
-})
+//     })
+
+    
+// })
