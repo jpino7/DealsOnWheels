@@ -20,6 +20,10 @@ body {
     height: 100px;
 }
 
+#tasks {
+    margin-top: 5px;
+}
+
 .input {
     border-radius: 15px 50px 30px;
     font-family: 'Cormorant Garamond', serif;
