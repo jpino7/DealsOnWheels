@@ -74,6 +74,15 @@ latestInfo();
 
 // });
 
+//another attempt to make new task block
+// $(addNew).on("click", function () {
+//     var taskBlock = $("<div>").addClass("columns")
+//     var text = $("<textarea>").addClass("input").attr("type", "text");
+//     var save = $("<button>").addClass("saveBtn button");
+//     var done = $("<button>").addClass("doneBtn button").attr("style", "margin-right: 10px; ");
+//     taskBlock.append(text, save, done);
+
+//     $("#taskSection").append(taskBlock);
 
 // joke generator function
 $("#testbtn").on("click", function () {
@@ -101,23 +110,54 @@ $("#testbtn").on("click", function () {
 
 })
 
-// Advice Slip click function
+// Inspirational Quotes Api Click Function
 
 $("#testbtn2").on("click", function (event) {
     event.preventDefault();
 
     $.ajax({
-        url: "https://api.adviceslip.com/advice",
+        async: true,
+        crossDomain: true,
+        url: "https://type.fit/api/quotes",
         method: "GET",
 
     }).then(function (response) {
-        var adviceText= JSON.parse(response);
+        const array = JSON.parse(response);
+        console.log(array);
+
+        var randomQuote = Math.floor(Math.random() * (array.length - 1));
+      
+            console.log(array[randomQuote].text);
+            $("#jokebox").text("\"" + array[randomQuote].text + "\"");
+
+            console.log(array[randomQuote].author);
+            $("#quoteAuthor").text("-" + array[randomQuote].author);
+        
+            
+           
+    })
+
+    
+})
+// Advice Slip click function
+
+// $("#testbtn2").on("click", function (event) {
+//     event.preventDefault();
+
+//     $.ajax({
+//         url: "https://api.adviceslip.com/advice",
+//         method: "GET",
+
+//     }).then(function (response) {
+//         var adviceText= JSON.parse(response);
        
-        $("#jokebox").text(adviceText.slip.advice);
-        console.log(adviceText);
+//         $("#jokebox").text(adviceText.slip.advice);
+//         console.log(adviceText);
 
         
 
 
-    })
-})
+//     })
+
+    
+// })
