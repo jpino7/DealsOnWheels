@@ -1,10 +1,12 @@
 // Button Variables
 var save = document.querySelectorAll(".saveBtn");
-var done = document.querySelectorAll(".doneBtn");
+var done = $(".doneBtn");
 var clear = document.getElementById("deleteBtn");
 var addNew = document.getElementById("addBtn")
 var taskNum = ["1", "2", "3", "4", "5"];
 var completeNum = ["done1", "done2", "done3", "done4", "done5"]
+var taskCount = 5;
+
 
 // Variable to display current date
 var today = moment().format('dddd, MMMM Do YYYY, h:mm a');
@@ -32,17 +34,26 @@ $(clear).on("click", function () {
 });
 
 // button to mark if task is completed
-$(done).on("click", function (event) {
+$("#tasksection").on("click", done, function (event) {
     event.preventDefault();
     var taskComplete = true;
-    console.log(taskComplete)
-
-    // changing the class color once clicked
-    if (taskComplete == true) {
-        $(this).addClass("complete");
+    // console.log(event.target)
+    var target = $(event.target)
+    if (target.is(".doneBtn")){
+        target.addClass("complete")
+        target.attr("data-complete", "true")
     };
 
-    // trying to set a function call when all bottons are true
+
+
+    // changing the class color once clicked
+    // if (taskComplete == true) {
+    //     $(this).addClass("complete");
+    // };
+    // (event.target).addClass("complete");
+    console.log($(this));
+
+    // trying to set a function call when all buttons are true
     for (i = 0; i < completeNum.length; i++) {
         var finished = completeNum[i];
         if ("#" + completeNum[i] == true) {
@@ -57,32 +68,74 @@ $(done).on("click", function (event) {
 function latestInfo() {
     for (i = 0; i < taskNum.length; i++) {
         console.log(localStorage.getItem(taskNum[i]))
-        $("#" + taskNum[i]).text(localStorage.getItem(taskNum[i]));
-
-        if (taskNum[i] == "") {
+        var data = localStorage.getItem(taskNum[i])
+        if (data == null){
             $("#" + taskNum[i]).text("")
+        } else {
+            $("#" + taskNum[i]).text(localStorage.getItem(taskNum[i]));
+
         }
+
+        // if (taskNum[i] == "") {
+        //     $("#" + taskNum[i]).text("")
+        // }
     }
 };
 latestInfo();
 
 
 // attempt to make new task blocks on click
-// $(addNew),on("click",function(){
+$(addNew).on("click",function(){
+    if(taskCount === 10){
+        return;
+    }
+    taskCount++;
+// Adding New Tasks
+    var newTaskLine = $("<div>");
+    newTaskLine.attr("id", "tasks");
+    newTaskLine.addClass("columns");
+// Style for Tasks
+    var styleDiv = $("<div>");
+    styleDiv.css("font-weight", "bolder");
+    styleDiv.text(taskCount + ".");
+    newTaskLine.append(styleDiv);
+// Select Text Area
+    var addTextArea = $("<textarea>");
+    addTextArea.attr("id", taskCount);
+    addTextArea.addClass("input");
+    addTextArea.attr("type", "text");
+    addTextArea.attr("placeholder", "Text Input");
+    newTaskLine.append(addTextArea);
+// Save Button
+    var newAddBtn = $("<button>");
+    newAddBtn.addClass("saveBtn button");
+    newAddBtn.attr("data-task", taskCount);
+    newAddBtn.text("Save");
+    newTaskLine.append(newAddBtn);
+// Done Button
+    var newDoneBtn = $("<button>");
+    newDoneBtn.attr("id", "done" + taskCount);
+    newDoneBtn.addClass("doneBtn button");
+    newDoneBtn.css("margin-right", "10px")
+    newDoneBtn.text("Done");
+    newTaskLine.append(newDoneBtn);
 
-//     $("#tasksection").append("");
 
-// });
 
-//another attempt to make new task block
-// $(addNew).on("click", function () {
-//     var taskBlock = $("<div>").addClass("columns")
-//     var text = $("<textarea>").addClass("input").attr("type", "text");
-//     var save = $("<button>").addClass("saveBtn button");
-//     var done = $("<button>").addClass("doneBtn button").attr("style", "margin-right: 10px; ");
-//     taskBlock.append(text, save, done);
+    $("#tasksection").append(newTaskLine);
 
-//     $("#taskSection").append(taskBlock);
+});
+
+
+
+/*   <div id="tasks" class="columns">
+                    <div style="font-weight: bolder;">1.</div>
+                    <textarea id="1" class="input" type="text" placeholder="Text input"></textarea>
+                    <button class="saveBtn button" data-task="1">Save</button>
+                    <button id="done1" class="doneBtn button" style="margin-right: 10px; ">Done</button>
+                </div>
+*/
+
 
 // joke generator function
 $("#testbtn").on("click", function () {
