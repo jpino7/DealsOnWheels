@@ -103,9 +103,6 @@ $("#testbtn").on("click", function () {
             $("#jokebox").text(response.value[i].joke );
         }
 
-
-
-
     })
 
 })
