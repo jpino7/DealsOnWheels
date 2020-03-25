@@ -100,7 +100,7 @@ $("#testbtn").on("click", function () {
 
         // for loop to append mutliple jokes
         for (var i = 0; i < response.value.length; i++) {
-            $("#jokebox").append("<li>" + response.value[i].joke + "</li>");
+            $("#jokebox").text(response.value[i].joke );
         }
 
 
