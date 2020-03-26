@@ -5,11 +5,11 @@ body {
 
 .weatherwidget-io {
     border-radius: 15px 50px 30px;
-    font-family: 'Cormorant Garamond', serif;
 }
 
 .hero {
     border-radius: 15px 50px 30px;
+    margin-top: 10px;
 }
 
 #logo {
@@ -29,14 +29,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
-.saveBtn {
-    background-color: #21ABCD;
-    border-radius: 15px 50px 30px;
-    font-family: 'Cormorant Garamond', serif;
-    color: white;
-}
-
-.doneBtn {
+.saveBtn, .doneBtn {
     background-color: #21ABCD;
     border-radius: 15px 50px 30px;
     font-family: 'Cormorant Garamond', serif;
@@ -52,6 +45,7 @@ body {
 
 #settings {
     border-radius: 15px 50px 30px;
+    margin-top: 10px;
 }
 
 #addBtn {
@@ -71,6 +65,9 @@ body {
     background-color: #00d1b2;
 }
 
+.content h3 {
+    color: white;
+}
 
 
 #copyright {

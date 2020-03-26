@@ -14,6 +14,10 @@ $(document).ready(function () {
     var completeNum = [document.querySelectorAll(".doneBtn")];
     var taskCount = 5;
 
+    // Greensock Logo Animation
+    gsap.to($("#logo"), {
+        rotation: 360, height: 100, width: 100, duration: 12
+    });
 
     // Variable to display current date
     var today = moment().format('dddd, MMMM Do YYYY, h:mm a');
@@ -22,7 +26,7 @@ $(document).ready(function () {
     $("#date").text(today);
 
 
-    // modal funtion buttons to choose joke or quote
+    // modal function buttons to choose joke or quote
     $(joke).on("click", function () {
         joke = true;
         $("#modal").removeClass("is-active");
@@ -78,9 +82,9 @@ $(document).ready(function () {
 
         }
 
-        
+
     });
-    
+
 
 
     // code block to get the stored data on page refresh
@@ -151,7 +155,6 @@ $(document).ready(function () {
     var randJoke = function () {
 
         // var jokeNum = $.trim($("#jokenumber").val());
-
         var queryUrl = "https://api.icndb.com/jokes/random/1";  //+ jokeNum
         $.ajax({
             url: queryUrl,
@@ -171,7 +174,6 @@ $(document).ready(function () {
     }
 
     // Inspirational Quotes Api Click Function
-
     var randQuote = function () {
 
 
@@ -199,6 +201,5 @@ $(document).ready(function () {
 
 
     }
-
 
 });
