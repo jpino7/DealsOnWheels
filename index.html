@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
 
     <!-- Style Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma@0.8.0/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
@@ -40,23 +43,19 @@
         </section>
         <br>
 
+        <!-- Modal Box -->
         <div id="modal" class="modal is-active">
             <div class="modal-background"></div>
             <div class="modal-content">
-                <!-- Any other Bulma elements you want -->
                 <div class="box" style="background-color: floralwhite;border-bottom: 2px solid rgb(137, 139, 139)">
-                    <p id="modalText">
-                        As a reward for completing each task, you will be provided with an amusing Chuck Norris Joke or
-                        with an inspirational famous Quote.<br><br>
-                        Please select your choice to continue and good luck!
-                    </p>
+                    <h3 class="subtitle is-4 modalText">Choose your Reward!</h3>
+                    <h4 class="subtitle is-4 modalText">Pick one to continue...</h4>
                 </div>
                 <div style="text-align: center;">
                     <button id="joke" class="is-large">Joke</button>
                     <button id="quote" class="close is-large">Quote</button>
                 </div>
             </div>
-            <!-- <button class="modal-close" aria-label="close"></button> -->
 
         </div>
 
@@ -145,11 +144,10 @@
         </section>
 
 
-        <!-- Code to the JavaScript File -->
+        <!-- Script Files -->
         <script>
             !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
         </script>
-        <script></script>
         <script
             src="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma@0.8.0/css/bulma.min.css"></script>
         <script src="https://code.jquery.com/jquery.js"></script>
