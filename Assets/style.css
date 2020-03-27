@@ -3,18 +3,18 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
-.modal-content{
+/* Modal Style */
+.modal-content {
     background-color: #00d1b2;
     height: 225px;
     border-radius: 15px 50px 30px;
     border: 3px solid rgb(3, 65, 80); 
     box-shadow: 3px 3px 20px #00d1b2;
     font-family: 'Cormorant Garamond', serif;
-
 }
 
-#joke,
-#quote {
+/* Modal Button Style */
+#joke, #quote {
     font-size: 20px;
     font-family:'Cormorant Garamond', serif;
     background-color:floralwhite;
@@ -27,28 +27,32 @@ body {
     color: rgb(7, 98, 121);
     margin-right: 10px;
     margin-left: 10px;
-    
 }
 
+/* Modal Button Hover Style */
 #joke:hover, #quote:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+/* Modal Text Style */
 .modalText {
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
     color: rgb(0, 0, 0);
 }
 
+/* Weather Widget Border Style */
 .weatherwidget-io {
     border-radius: 15px 50px 30px;
 }
 
+/* Hero Style */
 .hero {
     border-radius: 15px 50px 30px;
     margin-top: 10px;
 }
 
+/* Logo Style */
 #logo {
     display: block;
     margin-left: auto;
@@ -57,15 +61,18 @@ body {
     height: 100px;
 }
 
+/* Input Tasks Margin */
 #tasks {
     margin-top: 5px;
 }
 
+/* Input Tasks Style */
 .input {
     border-radius: 15px 50px 30px;
     font-family: 'Cormorant Garamond', serif;
 }
 
+/* Save and Done Tasks Buttons */
 .saveBtn, .doneBtn {
     background-color: #21ABCD;
     border-radius: 15px 50px 30px;
@@ -73,18 +80,21 @@ body {
     color: white;
 }
 
-.complete{
+/* When Tasks is Complete Button Style */
+.complete {
     background-color: rgb(71, 248, 27);
     border-radius: 15px 50px 30px;
     font-family: 'Cormorant Garamond', serif;
     color: white;
 }
 
+/* Settings Section Style */
 #settings {
     border-radius: 15px 50px 30px;
     margin-top: 10px;
 }
 
+/* Add New Tasks Button Style */
 #addBtn {
     background-color:#60ADB6;
     border-radius: 15px 50px 30px;
@@ -92,21 +102,24 @@ body {
     color: white;
 }
 
+/* Delete All Button Style */
 #deleteBtn {
     border-radius: 15px 50px 30px;
     font-family: 'Cormorant Garamond', serif;
 }
 
+/* Footer Style */
 .footer {
     border-radius: 15px 50px 30px;
     background-color: #00d1b2;
 }
 
+/* Footer Content Font Color */
 .content h3 {
     color: white;
 }
 
-
+/* Copyright Section */
 #copyright {
     text-align: center;
 }
