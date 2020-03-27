@@ -7,9 +7,9 @@ $(document).ready(function () {
     var joke = document.getElementById("joke");
     var quote = document.getElementById("quote");
     var save = document.querySelectorAll(".saveBtn");
-    var done = $(".doneBtn");
+    var done = document.querySelectorAll("#done");
     var clear = document.getElementById("deleteBtn");
-    var addNew = document.getElementById("addBtn")
+    var addNew = document.getElementById("addBtn");
     var taskNum = ["1", "2", "3", "4", "5"];
     var completeNum = [document.querySelectorAll(".doneBtn")];
     var taskCount = 5;
@@ -30,19 +30,17 @@ $(document).ready(function () {
     $(joke).on("click", function () {
         joke = true;
         $("#modal").removeClass("is-active");
-
     });
     // making the modal close when choice is made
     $(quote).on("click", function () {
         joke = false;
         $("#modal").removeClass("is-active");
-
     });
 
 
     //  code block to store data when pushing submit button
     $(save).on("click", function () {
-        var task = $(this).attr("data-task")
+        var task = $(this).attr("data-task");
         var inputBox = $("#" + task);
         var details = inputBox.val();
 
@@ -51,36 +49,37 @@ $(document).ready(function () {
     });
 
 
-
     // button to clear the local storage
     $(clear).on("click", function () {
-        localStorage.clear()
+        localStorage.clear();
     });
 
+
+
     // button to mark if task is completed
-    $("#tasksection").on("click", done, function (event) {
+    $("#tasksection").on("click", function (event) {
         event.preventDefault();
-        var target = $(event.target)
+        var target = $(event.target);
         if (target.is(".doneBtn")) {
-            target.addClass("complete")
-            target.attr("data-complete", "true")
+            target.addClass("complete");
+            target.attr("data-complete", "true");
+
+            // for loop to check if each .doneBtn  has a data complete attr
+            for (i = 0; i < completeNum.length; i++) {
+
+                //  if statement checking if data complete attr is true and calling joke or quote function
+                if ($(completeNum[i]).attr("data-complete") == "true") {
+                    if (joke == true) {
+                        randJoke()
+                    }
+                    else {
+                        randQuote()
+                    };
+                };
+            };
         };
 
         console.log($(done).attr("data-complete"));
-
-        for (i = 0; i < completeNum.length; i++) {
-
-            if ($(completeNum[i]).attr("data-complete") == "true") {
-                if (joke == true) {
-                    randJoke()
-                }
-                else {
-                    randQuote()
-                }
-            }
-            console.log($(completeNum[i]).attr("data-complete"));
-
-        }
 
 
     });
@@ -90,26 +89,27 @@ $(document).ready(function () {
     // code block to get the stored data on page refresh
     function latestInfo() {
         for (i = 0; i < taskNum.length; i++) {
-            console.log(localStorage.getItem(taskNum[i]))
-            var data = localStorage.getItem(taskNum[i])
+            console.log(localStorage.getItem(taskNum[i]));
+            var data = localStorage.getItem(taskNum[i]);
             if (data == null) {
                 $("#" + taskNum[i]).text("")
             } else {
                 $("#" + taskNum[i]).text(localStorage.getItem(taskNum[i]));
 
-            }
+            };
 
-        }
+        };
     };
     latestInfo();
 
 
-    // attempt to make new task blocks on click
+    // making a new task blocks on click with addBtn
     $(addNew).on("click", function () {
         if (taskCount === 10) {
             return;
-        }
+        };
         taskCount++;
+
         // Adding New Tasks
         var newTaskLine = $("<div>");
         newTaskLine.attr("id", "tasks");
@@ -121,7 +121,7 @@ $(document).ready(function () {
         styleDiv.text(taskCount + ".");
         newTaskLine.append(styleDiv);
 
-        // Select Text Area
+        // Creat Text Area
         var addTextArea = $("<textarea>");
         addTextArea.attr("id", taskCount);
         addTextArea.addClass("input");
@@ -138,7 +138,7 @@ $(document).ready(function () {
 
         // Done Button
         var newDoneBtn = $("<button>");
-        newDoneBtn.attr("id", "done" + taskCount);
+        newDoneBtn.attr("id", "done");
         newDoneBtn.addClass("doneBtn button");
         newDoneBtn.css("margin-right", "10px")
         newDoneBtn.text("Done");
@@ -167,15 +167,14 @@ $(document).ready(function () {
             // for loop to append mutliple jokes
             for (var i = 0; i < response.value.length; i++) {
                 $("#jokebox").text(response.value[i].joke);
-            }
+            };
 
-        })
+        });
 
-    }
+    };
 
     // Inspirational Quotes Api Click Function
     var randQuote = function () {
-
 
         $.ajax({
             async: true,
@@ -185,7 +184,6 @@ $(document).ready(function () {
 
         }).then(function (response) {
             const array = JSON.parse(response);
-            console.log(array);
 
             var randomQuote = Math.floor(Math.random() * (array.length - 1));
 
@@ -197,9 +195,9 @@ $(document).ready(function () {
 
 
 
-        })
+        });
 
 
-    }
+    };
 
 });
