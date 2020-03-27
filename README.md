@@ -1,4 +1,4 @@
-# Project #1 (Project Title)
+# Project #1 - Laughy Tasky
 
 # Introduction
 This project was to bring motivation to a busy individual by creating a task application to allow the user to save tasks throughout the day and when completing tasks have the choice between a Chuck Norris joke or an Inspirational quote. In the midst of all the commotion going on in the world right now we believe that we need a way to stay productive and motivated and how else by getting rewarded with a joke or a quote :)
